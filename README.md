@@ -1,74 +1,50 @@
-YouTube Streaming Software
-Overview
-This project enables live streaming to YouTube using FFmpeg, Socket.IO, Docker, and Node.js. It provides a simple setup for broadcasting video content directly to your YouTube channel.
+# YouTube Streaming Software
 
-Prerequisites
-Docker
-Node.js
-FF mpeg
-YouTube account with live streaming enabled
-Installation
-Clone the repository
+## Overview
+This project enables live streaming to YouTube using **FFmpeg**, **Socket.IO**, **Docker**, and **Node.js**. It provides a simple setup for broadcasting video content directly to your YouTube channel.
 
-bash
+## Prerequisites
+Before you begin, ensure you have the following installed:
 
-Verify
+- **Docker**
+- **Node.js**
+- **FFmpeg**
+- **YouTube account** with live streaming enabled
 
-Open In Editor
-Edit
-Copy code
+## Installation
+
+### Step 1: Clone the repository
+First, clone the project repository to your local machine:
+
+```bash
 git clone https://github.com/ABHI-Theq/StreamYard-Clone.git
 cd youtube-streaming-software
-Build the Docker image
+```
 
-bash
+Step 2: Build the Docker image
+Next, build the Docker image for the project:
 
-Verify
+```bash
+docker build -t streamyard-clone .
+```
 
-Open In Editor
-Edit
-Copy code
-docker build -t youtube-streaming .
-Run the Docker container
+Step 3: Run the Docker container
+Run the Docker container using the following command:
 
-bash
-
-Verify
-
-Open In Editor
-Edit
-Copy code
+```bash
 docker run -p 3000:3000 youtube-streaming
+```
 Usage
-Start the server
+Step 1: Start the server
+Navigate to the project directory and start the server:
 
-Navigate to the project directory and run:
-bash
+```bash
+npm start
+```
 
-Verify
-
-Open In Editor
-Edit
-Copy code
-node server.js
-Stream to YouTube
-
-Use FFmpeg to stream video to your YouTube RTMP URL:
-bash
-
-Verify
-
-Open In Editor
-Edit
-Copy code
-ffmpeg -re -i input.mp4 -c:v libx264 -preset veryfast -maxrate 3000k -bufsize 6000k -vf "scale=1280:720" -pix_fmt yuv420p -g 50 -c:a aac -b:a 160k -f flv rtmp://a.rtmp.youtube.com/live2/YOUR_STREAM_KEY
 Features
 Real-time video streaming to YouTube
-Utilizes Socket.IO for real-time communication
+Socket.IO integration for real-time communication
 Dockerized for easy deployment
 Contributing
-Fork the repository
-Create a new branch (git checkout -b feature/YourFeature)
-Commit your changes (git commit -m 'Add some feature')
-Push to the branch (git push origin feature/YourFeature)
-Open a pull request
+Contributions are welcome! Here's how you can contribute to the project:
