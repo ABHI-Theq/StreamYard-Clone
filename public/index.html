@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamYard Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6">
+    <h1 class="text-2xl font-bold text-center mb-4">StreamYard Clone</h1>
+    
+ <!-- Video Player -->
+ <div class="w-full h-auto bg-black rounded-md overflow-hidden">
+    <video 
+      id="user-video" 
+      class="w-full h-full object-contain" 
+      controls 
+      muted
+    >
+    </video>
+  </div>
+
+    <!-- RTMP Link Input -->
+    <div class="mt-4">
+      <label for="rtmp-link" class="block text-sm font-medium text-gray-700">RTMP Link</label>
+      <input 
+        type="text" 
+        id="rtmp-link" 
+        placeholder="Enter RTMP link here" 
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+      />
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex items-center justify-between mt-6">
+      <button 
+        id="start-button" 
+        class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md shadow"
+      >
+        Start
+      </button>
+      <button 
+        id="stop-button" 
+        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md shadow"
+      >
+        Stop
+      </button>
+    </div>
+  </div>
+  <script src="./socket.io/socket.io.js"></script>
+  <script src="./script.js">
+  </script>
+</body>
+</html>
